@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="my_assets_frontend" name="course_resouses">
+     <link rel="stylesheet" type="text/css" href="/website_course/static/src/css/style.css"/>
+</template>
+
+
+<!-- <template id="index">
+       <t t-call-assets="website_course.my_assets_frontend" />
+       <div>
+           <t t-foreach="crm" t-as="op">
+              <h1 class="titulo" t-esc='op.name' />
+           </t>
+       </div>
+</template> -->
+
+
+<template id="index">
+  <t t-name="website.suport">
+      <t t-call="website.layout">
+          <t t-call-assets="website_course.my_assets_frontend" />
+          <div id="wrap" class="oe_structure oe_empty"/>
+          <div class="oe_structure">
+              <div class="container">
+                <t t-foreach="crm" t-as="c">
+                  <t t-if="'1' in c.name">
+                      <p>ok</p>
+                  </t>
+                  <h1 class="titulo" t-esc='c.name' />
+                  <h3 t-esc='c.user_id.name' />
+                </t>
+              </div>
+          </div>
+      </t>
+  </t>
+</template>
+
+
+</odoo>
